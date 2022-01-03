@@ -1,0 +1,392 @@
+ubuntu@ip-172-31-42-161:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-42-161:~$ nano args.sh
+ubuntu@ip-172-31-42-161:~$ ./args.sh
+ what is your name :
+kevin
+ where are you :
+uk
+ what is your Id :
+123
+nivek
+ku
+321
+ubuntu@ip-172-31-42-161:~$ nano input.sh
+ubuntu@ip-172-31-42-161:~$ ./input.sh
+ what is your favourite place to visit:
+uk usa france
+favourite place is : uk
+favourite place is : usa
+favourite place is : france
+ubuntu@ip-172-31-42-161:~$ cat input.sh
+#!/bin/bash
+echo " what is your favourite place to visit: "
+read place1 place2 place3
+
+echo favourite place is : $place1
+echo favourite place is : $place2
+echo favourite place is : $place3
+ubuntu@ip-172-31-42-161:~$ nano ifelse.sh
+ubuntu@ip-172-31-42-161:~$ ./ifelse.sh
+enter the number
+3
+enter the number
+4
+they dont match!
+ubuntu@ip-172-31-42-161:~$ su - katie
+Password:
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+katie@ip-172-31-42-161:~$ sudo usermod -aG sudo katie
+[sudo] password for katie:
+katie@ip-172-31-42-161:~$ sudo usermod -aG sudo jane
+usermod: user 'jane' does not exist
+katie@ip-172-31-42-161:~$ sudo usermod -aG sudo katie
+katie@ip-172-31-42-161:~$ passwd
+Changing password for katie.
+Current password:
+New password:
+Retype new password:
+You must choose a longer password
+New password:
+Retype new password:
+You must choose a longer password
+New password:
+Retype new password:
+passwd: password updated successfully
+katie@ip-172-31-42-161:~$ exit
+logout
+ubuntu@ip-172-31-42-161:~$ ls
+ABC       abc.yml  bootcamp         hifly          input.sh        kevin.txt              prime.sh       amar
+ABCimpex  allperm  c                ifelse.sh      install-tomcat  kevin_orchestrate.yml  prime.sh.save
+a         args.sh  d                impex          jon             kevin_playbook         start-tomcat
+abc.sh    b        galaxyinfor.txt  initialgalaxy  kevin           main.yml               temp
+ubuntu@ip-172-31-42-161:~$ cd bootcamp
+ubuntu@ip-172-31-42-161:~/bootcamp$ ls
+emptyfile.txt
+ubuntu@ip-172-31-42-161:~/bootcamp$ cd ..
+ubuntu@ip-172-31-42-161:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:syslog
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:ubuntu
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:ubuntu
+tape:x:26:
+sudo:x:27:ubuntu,katie
+audio:x:29:ubuntu
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:ubuntu
+sasl:x:45:
+plugdev:x:46:ubuntu
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+systemd-timesync:x:104:
+crontab:x:105:
+messagebus:x:106:
+input:x:107:
+kvm:x:108:
+render:x:109:
+syslog:x:110:
+tss:x:111:
+uuidd:x:112:
+tcpdump:x:113:
+ssh:x:114:
+landscape:x:115:
+admin:x:116:
+netdev:x:117:ubuntu
+lxd:x:118:ubuntu
+systemd-coredump:x:999:
+ubuntu:x:1000:
+kevin:x:1001:
+tom:x:1002:
+jon:x:1003:
+mark:x:1004:
+ABCimpex:x:1005:
+louis:x:1006:
+pat:x:1007:
+david:x:1008:
+warner:x:1009:
+smith:x:1010:
+timjag:x:1011:
+katie:x:1012:
+devops:x:1013:
+Devops:x:123:
+ubuntu@ip-172-31-42-161:~$ sudo chgrp devops emptyfile.txt
+chgrp: cannot access 'emptyfile.txt': No such file or directory
+ubuntu@ip-172-31-42-161:~$ sudo chgrp devops
+chgrp: missing operand after ‘devops’
+Try 'chgrp --help' for more information.
+ubuntu@ip-172-31-42-161:~$ sudo chgrp devops bootcamp
+ubuntu@ip-172-31-42-161:~$ ls
+ABC       abc.yml  bootcamp         hifly          input.sh        kevin.txt              prime.sh       amar
+ABCimpex  allperm  c                ifelse.sh      install-tomcat  kevin_orchestrate.yml  prime.sh.save
+a         args.sh  d                impex          jon             kevin_playbook         start-tomcat
+abc.sh    b        galaxyinfor.txt  initialgalaxy  kevin           main.yml               temp
+ubuntu@ip-172-31-42-161:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:syslog
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:ubuntu
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:ubuntu
+tape:x:26:
+sudo:x:27:ubuntu,katie
+audio:x:29:ubuntu
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:ubuntu
+sasl:x:45:
+plugdev:x:46:ubuntu
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+systemd-timesync:x:104:
+crontab:x:105:
+messagebus:x:106:
+input:x:107:
+kvm:x:108:
+render:x:109:
+syslog:x:110:
+tss:x:111:
+uuidd:x:112:
+tcpdump:x:113:
+ssh:x:114:
+landscape:x:115:
+admin:x:116:
+netdev:x:117:ubuntu
+lxd:x:118:ubuntu
+systemd-coredump:x:999:
+ubuntu:x:1000:
+kevin:x:1001:
+tom:x:1002:
+jon:x:1003:
+mark:x:1004:
+ABCimpex:x:1005:
+louis:x:1006:
+pat:x:1007:
+david:x:1008:
+warner:x:1009:
+smith:x:1010:
+timjag:x:1011:
+katie:x:1012:
+devops:x:1013:
+Devops:x:123:
+ubuntu@ip-172-31-42-161:~$ ls
+ABC       abc.yml  bootcamp         hifly          input.sh        kevin.txt              prime.sh       amar
+ABCimpex  allperm  c                ifelse.sh      install-tomcat  kevin_orchestrate.yml  prime.sh.save
+a         args.sh  d                impex          jon             kevin_playbook         start-tomcat
+abc.sh    b        galaxyinfor.txt  initialgalaxy  kevin           main.yml               temp
+ubuntu@ip-172-31-42-161:~$ cd bootcamp
+ubuntu@ip-172-31-42-161:~/bootcamp$ ls
+emptyfile.txt
+ubuntu@ip-172-31-42-161:~/bootcamp$ ls -l emptyfile.txt
+-rw-rw-r-- 1 ubuntu ubuntu 0 Dec 20 07:34 emptyfile.txt
+ubuntu@ip-172-31-42-161:~/bootcamp$ cd ..
+ubuntu@ip-172-31-42-161:~$ sudo chgrp devops bootcamp
+ubuntu@ip-172-31-42-161:~$ ls
+ABC       abc.yml  bootcamp         hifly          input.sh        kevin.txt              prime.sh       amar
+ABCimpex  allperm  c                ifelse.sh      install-tomcat  kevin_orchestrate.yml  prime.sh.save
+a         args.sh  d                impex          jon             kevin_playbook         start-tomcat
+abc.sh    b        galaxyinfor.txt  initialgalaxy  kevin           main.yml               temp
+ubuntu@ip-172-31-42-161:~$ chmod u+ allperm
+ubuntu@ip-172-31-42-161:~$ ls -lh
+total 116K
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 06:51 ABC
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 09:53 ABCimpex
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 07:01 a
+-rwxrwxr--  1 ubuntu ubuntu  132 Dec 16 12:17 abc.sh
+-rwxrwxr--  1 ubuntu ubuntu   90 Dec 15 11:54 abc.yml
+-r--r--r--  1 ubuntu ubuntu   19 Dec 20 08:10 allperm
+-rwxrwxr--  1 ubuntu ubuntu  181 Dec 20 08:48 args.sh
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 07:01 b
+drwxrwxr-x  2 ubuntu devops 4.0K Dec 20 07:34 bootcamp
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 07:01 c
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 07:01 d
+-rw-rw-r--  1 ubuntu ubuntu   23 Dec 17 08:26 galaxyinfor.txt
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 18 11:49 hifly
+-rwxrwxr--  1 ubuntu ubuntu  152 Dec 20 07:06 ifelse.sh
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 06:51 impex
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 09:54 initialgalaxy
+-rwxrwxr--  1 ubuntu ubuntu  189 Dec 20 06:37 input.sh
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 16 05:17 install-tomcat
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 15 11:55 jon
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 15 11:46 kevin
+-rw-rw-r--  1 ubuntu ubuntu   76 Dec 17 06:55 kevin.txt
+-rw-rw-r--  1 ubuntu ubuntu   91 Dec 16 09:49 kevin_orchestrate.yml
+drwxrwxr-x  4 ubuntu ubuntu 4.0K Dec 16 10:00 kevin_playbook
+-rw-rw-r--  1 ubuntu ubuntu  297 Dec 16 05:02 main.yml
+-rwxrwxr--  1 ubuntu ubuntu  194 Dec 17 04:04 prime.sh
+-rwxrwxr--  1 ubuntu ubuntu  188 Dec 16 12:33 prime.sh.save
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 16 05:22 start-tomcat
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 20 08:14 temp
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 15 11:46 vivek
+ubuntu@ip-172-31-42-161:~$ ls -l
+total 116
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 17 06:51 ABC
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 17 09:53 ABCimpex
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 17 07:01 a
+-rwxrwxr--  1 ubuntu ubuntu  132 Dec 16 12:17 abc.sh
+-rwxrwxr--  1 ubuntu ubuntu   90 Dec 15 11:54 abc.yml
+-r--r--r--  1 ubuntu ubuntu   19 Dec 20 08:10 allperm
+-rwxrwxr--  1 ubuntu ubuntu  181 Dec 20 08:48 args.sh
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 17 07:01 b
+drwxrwxr-x  2 ubuntu devops 4096 Dec 20 07:34 bootcamp
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 17 07:01 c
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 17 07:01 d
+-rw-rw-r--  1 ubuntu ubuntu   23 Dec 17 08:26 galaxyinfor.txt
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 18 11:49 hifly
+-rwxrwxr--  1 ubuntu ubuntu  152 Dec 20 07:06 ifelse.sh
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 17 06:51 impex
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 17 09:54 initialgalaxy
+-rwxrwxr--  1 ubuntu ubuntu  189 Dec 20 06:37 input.sh
+drwxrwxr-x 10 ubuntu ubuntu 4096 Dec 16 05:17 install-tomcat
+drwxrwxr-x 10 ubuntu ubuntu 4096 Dec 15 11:55 jon
+drwxrwxr-x 10 ubuntu ubuntu 4096 Dec 15 11:46 kevin
+-rw-rw-r--  1 ubuntu ubuntu   76 Dec 17 06:55 kevin.txt
+-rw-rw-r--  1 ubuntu ubuntu   91 Dec 16 09:49 kevin_orchestrate.yml
+drwxrwxr-x  4 ubuntu ubuntu 4096 Dec 16 10:00 kevin_playbook
+-rw-rw-r--  1 ubuntu ubuntu  297 Dec 16 05:02 main.yml
+-rwxrwxr--  1 ubuntu ubuntu  194 Dec 17 04:04 prime.sh
+-rwxrwxr--  1 ubuntu ubuntu  188 Dec 16 12:33 prime.sh.save
+drwxrwxr-x 10 ubuntu ubuntu 4096 Dec 16 05:22 start-tomcat
+drwxrwxr-x  2 ubuntu ubuntu 4096 Dec 20 08:14 temp
+drwxrwxr-x 10 ubuntu ubuntu 4096 Dec 15 11:46 vivek
+ubuntu@ip-172-31-42-161:~$ cd temp
+ubuntu@ip-172-31-42-161:~/temp$ ls
+allperm
+ubuntu@ip-172-31-42-161:~/temp$ cd ..
+ubuntu@ip-172-31-42-161:~$ touch perm1 perm2 perm3
+ubuntu@ip-172-31-42-161:~$ ls
+ABC       abc.yml  bootcamp         hifly          input.sh        kevin.txt              perm1     prime.sh.save
+ABCimpex  allperm  c                ifelse.sh      install-tomcat  kevin_orchestrate.yml  perm2     start-tomcat
+a         args.sh  d                impex          jon             kevin_playbook         perm3     temp
+abc.sh    b        galaxyinfor.txt  initialgalaxy  kevin           main.yml               prime.sh  amar
+ubuntu@ip-172-31-42-161:~$ cd temp
+ubuntu@ip-172-31-42-161:~/temp$ ls
+allperm
+ubuntu@ip-172-31-42-161:~/temp$ sl
+ubuntu@ip-172-31-42-161:~/temp$ cd ..
+ubuntu@ip-172-31-42-161:~$ sl
+ubuntu@ip-172-31-42-161:~$ chmod u+o perm1
+ubuntu@ip-172-31-42-161:~$ ls -lh
+total 116K
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 06:51 ABC
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 09:53 ABCimpex
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 07:01 a
+-rwxrwxr--  1 ubuntu ubuntu  132 Dec 16 12:17 abc.sh
+-rwxrwxr--  1 ubuntu ubuntu   90 Dec 15 11:54 abc.yml
+-r--r--r--  1 ubuntu ubuntu   19 Dec 20 08:10 allperm
+-rwxrwxr--  1 ubuntu ubuntu  181 Dec 20 08:48 args.sh
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 07:01 b
+drwxrwxr-x  2 ubuntu devops 4.0K Dec 20 07:34 bootcamp
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 07:01 c
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 07:01 d
+-rw-rw-r--  1 ubuntu ubuntu   23 Dec 17 08:26 galaxyinfor.txt
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 18 11:49 hifly
+-rwxrwxr--  1 ubuntu ubuntu  152 Dec 20 07:06 ifelse.sh
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 06:51 impex
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 17 09:54 initialgalaxy
+-rwxrwxr--  1 ubuntu ubuntu  189 Dec 20 06:37 input.sh
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 16 05:17 install-tomcat
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 15 11:55 jon
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 15 11:46 kevin
+-rw-rw-r--  1 ubuntu ubuntu   76 Dec 17 06:55 kevin.txt
+-rw-rw-r--  1 ubuntu ubuntu   91 Dec 16 09:49 kevin_orchestrate.yml
+drwxrwxr-x  4 ubuntu ubuntu 4.0K Dec 16 10:00 kevin_playbook
+-rw-rw-r--  1 ubuntu ubuntu  297 Dec 16 05:02 main.yml
+-rw-rw-r--  1 ubuntu ubuntu    0 Dec 20 09:04 perm1
+-rw-rw-r--  1 ubuntu ubuntu    0 Dec 20 09:04 perm2
+-rw-rw-r--  1 ubuntu ubuntu    0 Dec 20 09:04 perm3
+-rwxrwxr--  1 ubuntu ubuntu  194 Dec 17 04:04 prime.sh
+-rwxrwxr--  1 ubuntu ubuntu  188 Dec 16 12:33 prime.sh.save
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 16 05:22 start-tomcat
+drwxrwxr-x  2 ubuntu ubuntu 4.0K Dec 20 08:14 temp
+drwxrwxr-x 10 ubuntu ubuntu 4.0K Dec 15 11:46 vivek
+ubuntu@ip-172-31-42-161:~$ chmod u+= perm2
+ubuntu@ip-172-31-42-161:~$ ls - lh
+ls: cannot access '-': No such file or directory
+ls: cannot access 'lh': No such file or directory
+ubuntu@ip-172-31-42-161:~$ ls
+ABC       abc.yml  bootcamp         hifly          input.sh        kevin.txt              perm1     prime.sh.save
+ABCimpex  allperm  c                ifelse.sh      install-tomcat  kevin_orchestrate.yml  perm2     start-tomcat
+a         args.sh  d                impex          jon             kevin_playbook         perm3     temp
+abc.sh    b        galaxyinfor.txt  initialgalaxy  kevin           main.yml               prime.sh  amar
+ubuntu@ip-172-31-42-161:~$ ls -lh perm2
+----rw-r-- 1 ubuntu ubuntu 0 Dec 20 09:04 perm2
+ubuntu@ip-172-31-42-161:~$ sl
+ubuntu@ip-172-31-42-161:~$ man sl
+ubuntu@ip-172-31-42-161:~$ sl
+ubuntu@ip-172-31-42-161:~$ sl -l
+ubuntu@ip-172-31-42-161:~$ sl -F
+ubuntu@ip-172-31-42-161:~$ chmod g+= perm1
+ubuntu@ip-172-31-42-161:~$ ls -lh perm1
+-rw----r-- 1 ubuntu ubuntu 0 Dec 20 09:04 perm1
+ubuntu@ip-172-31-42-161:~$ su katie
+Password:
+su: Authentication failure
+ubuntu@ip-172-31-42-161:~$ su katie
+Password:
+katie@ip-172-31-42-161:/home/ubuntu$ cd ..
+katie@ip-172-31-42-161:/home$ cd ..
+katie@ip-172-31-42-161:/$ su ubuntu
+Password:
+su: Authentication failure
+katie@ip-172-31-42-161:/$ exit
+exit
+ubuntu@ip-172-31-42-161:~$ p
+Network error: Software caused connection abort
+
